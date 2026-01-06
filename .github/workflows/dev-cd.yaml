@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.DHUB_USER }}
           password: ${{ secrets.DHUB_TOKEN }}
       - name: Build Image
-        run: docker image build -t ${{secrets.DHUB_USER}}/w14:latest
+        run: docker image build -t ${{secrets.DHUB_USER}}/w14:latest .
       - name: Push Image On Docker Hub
         run: docker push ${{secrets.DHUB_USER}}/w14:latest
       - name: Ask Render.com To Peform the New Deployment
