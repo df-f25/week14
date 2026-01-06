@@ -48,7 +48,7 @@ jobs:
       - name: Build Website Image
         run: docker image build -t ${{secrets.DHUB_USER}}/app:latest .
       - name: List the Available Images on Runner
-        run: dls
+        run: ls
       - name: Create and Rocker image un Container from New Image
         run: docker container run -d -p 2222:80 ${{secrets.DHUB_USER}}/app:latest
       - name: List The Running Containers
